@@ -6,18 +6,9 @@
     <title>CreadorYCalculadoraDeRecetas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
     <style type="text/tailwindcss">
@@ -40,108 +31,23 @@
         --color-border: var(--border);
         --color-input: var(--input);
         --color-ring: var(--ring);
-        --color-chart-1: var(--chart-1);
-        --color-chart-2: var(--chart-2);
-        --color-chart-3: var(--chart-3);
-        --color-chart-4: var(--chart-4);
-        --color-chart-5: var(--chart-5);
-
         --font-font-sans: var(--font-sans);
         --font-font-heading: var(--font-heading);
         --font-font-serif: var(--font-serif);
         --font-font-mono: var(--font-mono);
       }
-
       @theme {
         --radius-xs: calc(var(--radius) - 8px);
         --radius-sm: calc(var(--radius) - 4px);
         --radius-md: calc(var(--radius) - 2px);
         --radius-lg: var(--radius);
         --radius-xl: calc(var(--radius) + 4px);
-        --radius-2xl: calc(var(--radius) + 8px);
-        --radius-3xl: calc(var(--radius) + 16px);
-        --radius-4xl: calc(var(--radius) + 24px);
       }
-
-      * {
-        corner-shape: var(--shape, round);
-      }
-
-      .rounded-full, .rounded-none,
-      .rounded-t-full, .rounded-t-none,
-      .rounded-r-full, .rounded-r-none,
-      .rounded-b-full, .rounded-b-none,
-      .rounded-l-full, .rounded-l-none,
-      .rounded-s-full, .rounded-s-none,
-      .rounded-e-full, .rounded-e-none,
-      .rounded-tl-full, .rounded-tl-none,
-      .rounded-tr-full, .rounded-tr-none,
-      .rounded-bl-full, .rounded-bl-none,
-      .rounded-br-full, .rounded-br-none,
-      .rounded-ss-full, .rounded-ss-none,
-      .rounded-se-full, .rounded-se-none,
-      .rounded-es-full, .rounded-es-none,
-      .rounded-ee-full, .rounded-ee-none {
-        corner-shape: round;
-      }
-
-      @utility rounded-* {
-        border-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-t-* {
-        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-r-* {
-        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-b-* {
-        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-l-* {
-        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-tl-* {
-        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-tr-* {
-        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-bl-* {
-        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-br-* {
-        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-s-* {
-        border-start-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-end-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-e-* {
-        border-start-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-end-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-ss-* {
-        border-start-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-se-* {
-        border-start-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-es-* {
-        border-end-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-ee-* {
-        border-end-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-
+      * { corner-shape: var(--shape, round); }
       :root {
         --shape: round;
         --shape-multiplier: 1;
-
-          --background: #12141799;
+        --background: #12141799;
         --foreground: #F1F3F5;
         --primary: #00c4a9;
         --primary-foreground: #022c1f;
@@ -159,247 +65,385 @@
         --border: #374151;
         --input: #272A30;
         --ring: #00C48C;
-        --chart-1: #00C48C;
-        --chart-2: #F59E0B;
-        --chart-3: #F43F5E;
-        --chart-4: #3B82F6;
-        --chart-5: #8B5CF6;
-
         --font-sans: "Inter";
         --font-heading: "Inter";
         --font-serif: "Playfair Display";
         --font-mono: "JetBrains Mono";
-
         --radius: 1.5rem;
       }
-
-      /* Prevent layout shift for icons without explicit dimensions */
-      iconify-icon:not([width]):not([height]) {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-      }
-
-      /* Hide scrollbars */
-      *,
-      *::before,
-      *::after {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-      *::-webkit-scrollbar {
-        display: none;
-      }
+      iconify-icon:not([width]):not([height]) { display: inline-block; width: 1em; height: 1em; }
+      *, *::before, *::after { scrollbar-width: none; -ms-overflow-style: none; }
+      *::-webkit-scrollbar { display: none; }
+      .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 50; justify-content: center; align-items: flex-start; padding: 2rem 1rem; overflow-y: auto; }
+      .modal.show { display: flex; }
+      .modal-content { background: var(--card); border: 1px solid var(--border); border-radius: 0.5rem; padding: 1.5rem; max-width: 560px; width: 100%; margin: auto; }
     </style>
   </head>
   <body>
     <div class="flex flex-col min-h-screen bg-background text-foreground pb-20 font-sans">
-      <header class="flex items-center justify-between p-4 border-b border-border bg-card">
+      <header class="flex items-center justify-between p-4 border-b border-border bg-card sticky top-0 z-10">
         <div class="flex items-center gap-2">
           <iconify-icon icon="ph:flask-fill" class="text-xl text-primary"></iconify-icon>
-          <h1 class="text-lg font-heading font-semibold tracking-tight uppercase">Nueva Receta</h1>
+          <h1 class="text-lg font-heading font-semibold tracking-tight uppercase">Recetas</h1>
         </div>
-        <button class="text-sm font-bold text-primary uppercase tracking-wider">Guardar</button>
+        <button id="newRecetaBtn" class="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center">
+          <iconify-icon icon="ph:plus-bold" class="text-lg"></iconify-icon>
+        </button>
       </header>
-      <main class="flex-1 p-4 space-y-6 overflow-y-auto">
-        <div class="space-y-4">
-          <div>
-            <label
-              class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1"
-              >Nombre del Producto</label
-            ><input
-              type="text"
-              placeholder="Ej: Vela Aromática 250g"
-              class="w-full bg-input border border-border rounded-sm p-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary"
-            />
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label
-                class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1"
-                >Tamaño del Lote</label
-              >
-              <div class="relative">
-                <input
-                  type="number"
-                  value="10"
-                  class="w-full bg-input border border-border rounded-sm p-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary font-mono"
-                /><span
-                  class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground"
-                  >unidades</span
-                >
-              </div>
-            </div>
-            <div>
-              <label
-                class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1"
-                >Rendimiento Estim.</label
-              >
-              <div class="relative">
-                <input
-                  type="text"
-                  value="98"
-                  class="w-full bg-input border border-border rounded-sm p-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary font-mono"
-                  disabled
-                /><span
-                  class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground"
-                  >%</span
-                >
-              </div>
-            </div>
-          </div>
+      <main class="flex-1 p-4 space-y-4 overflow-y-auto">
+        <div id="recetasList" class="space-y-3">
+          <div class="text-center text-muted-foreground py-8">Cargando recetas...</div>
         </div>
-        <section>
-          <h2
-            class="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3 flex justify-between items-center"
-          >
-            <span>Insumos Requeridos</span
-            ><button class="text-primary text-[10px] flex items-center gap-1">
-              <iconify-icon icon="ph:plus-circle-bold"></iconify-icon> Añadir Insumo
-            </button>
-          </h2>
-          <div class="space-y-3">
-            <div class="bg-card border border-border rounded-sm p-3 space-y-3">
-              <div class="flex justify-between items-start">
-                <span class="text-xs font-bold uppercase tracking-tight">Cera de Soya Premium</span
-                ><button class="text-muted-foreground hover:text-destructive">
-                  <iconify-icon icon="ph:trash-bold"></iconify-icon>
-                </button>
-              </div>
-              <div class="grid grid-cols-2 gap-4">
-                <div>
-                  <label class="text-[8px] font-bold text-muted-foreground uppercase mb-1 block"
-                    >Cant. Neta</label
-                  >
-                  <div class="relative">
-                    <input
-                      type="number"
-                      value="230"
-                      class="w-full bg-input/50 border border-border rounded-sm p-2 text-xs font-mono"
-                    /><span
-                      class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground"
-                      >g</span
-                    >
-                  </div>
-                </div>
-                <div>
-                  <label class="text-[8px] font-bold text-accent uppercase mb-1 block"
-                    >Merma (3.5%)</label
-                  >
-                  <div class="relative">
-                    <input
-                      type="text"
-                      value="8.05"
-                      class="w-full bg-accent/5 border border-accent/20 text-accent rounded-sm p-2 text-xs font-mono"
-                      readonly
-                    /><span
-                      class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-accent/70"
-                      >g</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="pt-2 border-t border-border flex justify-between items-center">
-                <span class="text-[9px] text-muted-foreground uppercase">Cant. Bruta Real</span
-                ><span class="text-xs font-mono font-bold">238.05 g</span>
-              </div>
-            </div>
-            <div class="bg-card border border-border rounded-sm p-3 space-y-3">
-              <div class="flex justify-between items-start">
-                <span class="text-xs font-bold uppercase tracking-tight">Frasco Vidrio 250ml</span
-                ><button class="text-muted-foreground">
-                  <iconify-icon icon="ph:trash-bold"></iconify-icon>
-                </button>
-              </div>
-              <div class="grid grid-cols-2 gap-4">
-                <div>
-                  <label class="text-[8px] font-bold text-muted-foreground uppercase mb-1 block"
-                    >Cant. Neta</label
-                  >
-                  <div class="relative">
-                    <input
-                      type="number"
-                      value="1"
-                      class="w-full bg-input/50 border border-border rounded-sm p-2 text-xs font-mono"
-                    /><span
-                      class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground"
-                      >u</span
-                    >
-                  </div>
-                </div>
-                <div>
-                  <label class="text-[8px] font-bold text-accent uppercase mb-1 block"
-                    >Merma (0%)</label
-                  >
-                  <div class="relative">
-                    <input
-                      type="text"
-                      value="0"
-                      class="w-full bg-input/20 border border-border rounded-sm p-2 text-xs font-mono"
-                      readonly
-                    /><span
-                      class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground"
-                      >u</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+      </main>
+      <nav class="fixed bottom-0 left-0 right-0 bg-card border-t border-border flex items-center justify-between pb-safe">
+        <a href="dashboard-principal.html" class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground">
+          <iconify-icon icon="ph:squares-four" class="text-xl mb-1"></iconify-icon>
+          <span class="text-[10px] font-semibold">Inicio</span>
+        </a>
+        <a href="gestión-de-insumos-y-kardex.html" class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground">
+          <iconify-icon icon="ph:box-arrow-down" class="text-xl mb-1"></iconify-icon>
+          <span class="text-[10px] font-semibold">Insumos</span>
+        </a>
+        <a href="creador-y-calculadora-de-recetas.html" class="flex-1 flex flex-col items-center justify-center py-3 text-primary">
+          <iconify-icon icon="ph:flask-fill" class="text-xl mb-1"></iconify-icon>
+          <span class="text-[10px] font-semibold">Recetas</span>
+        </a>
+      </nav>
+    </div>
+
+    <div id="recetaModal" class="modal">
+      <div class="modal-content">
+        <h2 id="modalTitle" class="text-lg font-bold mb-4">Nueva Receta</h2>
+        <form id="recetaForm" class="space-y-4">
+          <div>
+            <label class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1">Nombre del Producto *</label>
+            <input id="nombre" type="text" required placeholder="Ej: Vela Aromática 250g" class="w-full bg-input border border-border rounded-sm p-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary" />
           </div>
-        </section>
-        <section class="bg-primary/5 border border-primary/20 rounded-sm p-4 space-y-4">
+          <div>
+            <label class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1">Descripción</label>
+            <input id="descripcion" type="text" class="w-full bg-input border border-border rounded-sm p-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <p class="text-[9px] text-muted-foreground uppercase font-bold mb-1">
-                Costo Unitario (Bruto)
-              </p>
-              <p class="text-lg font-heading font-bold">$12.45</p>
+              <label class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1">Rendimiento (Lote) *</label>
+              <input id="rendimiento" type="number" step="0.01" required value="10" class="w-full bg-input border border-border rounded-sm p-3 text-sm font-mono focus:outline-none focus:ring-1 focus:ring-primary" />
             </div>
             <div>
-              <label class="text-[9px] text-primary uppercase font-bold mb-1 block"
-                >Margen Deseado (%)</label
-              ><input
-                type="number"
-                value="60"
-                class="w-full bg-primary/10 border border-primary/30 rounded-sm p-2 text-xs font-mono text-primary font-bold"
-              />
+              <label class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1">Unidad Rendimiento *</label>
+              <select id="unidad_rendimiento" required class="w-full bg-input border border-border rounded-sm p-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary">
+                <option value="piezas">Piezas</option>
+                <option value="kg">Kilogramos</option>
+                <option value="L">Litros</option>
+                <option value="und">Unidades</option>
+              </select>
             </div>
           </div>
-          <div class="pt-3 border-t border-primary/20">
-            <div class="flex justify-between items-end">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1">Tiempo Producción (min)</label>
+              <input id="tiempo_produccion" type="number" class="w-full bg-input border border-border rounded-sm p-3 text-sm font-mono focus:outline-none focus:ring-1 focus:ring-primary" />
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1">Dificultad</label>
+              <select id="dificultad" class="w-full bg-input border border-border rounded-sm p-3 text-sm focus:outline-none focus:ring-1 focus:ring-primary">
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+              </select>
+            </div>
+          </div>
+
+          <section>
+            <h3 class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-2 flex justify-between items-center">
+              <span>Insumos Requeridos</span>
+              <button type="button" id="addIngredienteBtn" class="text-primary text-[10px] flex items-center gap-1">
+                <iconify-icon icon="ph:plus-circle-bold"></iconify-icon> Añadir Insumo
+              </button>
+            </h3>
+            <div id="ingredientesRows" class="space-y-2"></div>
+          </section>
+
+          <section class="bg-primary/5 border border-primary/20 rounded-sm p-4 space-y-3">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <p class="text-[9px] text-muted-foreground uppercase font-bold mb-1">Costo Unitario (Bruto)</p>
+                <p id="costoUnitario" class="text-lg font-heading font-bold">$0.00</p>
+              </div>
+              <div>
+                <label class="text-[9px] text-primary uppercase font-bold mb-1 block">Margen Deseado (%)</label>
+                <input id="margen" type="number" value="60" class="w-full bg-primary/10 border border-primary/30 rounded-sm p-2 text-xs font-mono text-primary font-bold" />
+              </div>
+            </div>
+            <div class="pt-3 border-t border-primary/20 flex justify-between items-end">
               <div>
                 <p class="text-[9px] text-muted-foreground uppercase font-bold">Precio Sugerido</p>
-                <p class="text-2xl font-heading font-bold text-primary">$31.12</p>
+                <p id="precioSugerido" class="text-2xl font-heading font-bold text-primary">$0.00</p>
               </div>
               <div class="text-right">
                 <p class="text-[9px] text-muted-foreground uppercase font-bold">Ganancia/Unidad</p>
-                <p class="text-lg font-mono font-bold text-primary">+$18.67</p>
+                <p id="gananciaUnidad" class="text-lg font-mono font-bold text-primary">+$0.00</p>
               </div>
             </div>
+          </section>
+
+          <div class="flex gap-2 pt-2">
+            <button type="submit" class="flex-1 bg-primary text-primary-foreground py-2 rounded-sm font-semibold">Guardar</button>
+            <button type="button" id="closeModal" class="flex-1 bg-secondary text-foreground py-2 rounded-sm font-semibold">Cancelar</button>
           </div>
-        </section>
-      </main>
-      <nav
-        class="fixed bottom-0 left-0 right-0 bg-card border-t border-border flex items-center justify-between pb-safe"
-      >
-        <button class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground">
-          <iconify-icon icon="ph:squares-four" class="text-xl mb-1"></iconify-icon
-          ><span class="text-[10px] font-semibold">Inicio</span></button
-        ><button
-          class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground"
-        >
-          <iconify-icon icon="ph:box-arrow-down" class="text-xl mb-1"></iconify-icon
-          ><span class="text-[10px] font-semibold">Insumos</span></button
-        ><button class="flex-1 flex flex-col items-center justify-center py-3 text-primary">
-          <iconify-icon icon="ph:flask-fill" class="text-xl mb-1"></iconify-icon
-          ><span class="text-[10px] font-semibold">Recetas</span></button
-        ><button
-          class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground"
-        >
-          <iconify-icon icon="ph:factory" class="text-xl mb-1"></iconify-icon
-          ><span class="text-[10px] font-semibold">Producción</span>
-        </button>
-      </nav>
+        </form>
+      </div>
     </div>
+
+    <script>
+      const API_BASE = '/api';
+      let insumosCache = [];
+      let recetasList = [];
+      let currentEditId = null;
+      let ingredienteRowCount = 0;
+
+      async function fetchInsumos() {
+        const res = await fetch(`${API_BASE}/insumos`);
+        if (!res.ok) throw new Error('Failed to fetch insumos');
+        return res.json();
+      }
+
+      async function loadRecetas() {
+        try {
+          const res = await fetch(`${API_BASE}/recetas`);
+          if (!res.ok) throw new Error('Failed');
+          recetasList = await res.json();
+          renderRecetas();
+        } catch (error) {
+          document.getElementById('recetasList').innerHTML = '<div class="text-center text-destructive py-8">Error al cargar recetas</div>';
+        }
+      }
+
+      function calcCosto(receta) {
+        return (receta.receta_ingredientes || []).reduce((sum, ing) => {
+          const precio = ing.insumos ? ing.insumos.precio_unitario : 0;
+          return sum + (ing.cantidad * precio);
+        }, 0);
+      }
+
+      function renderRecetas() {
+        const container = document.getElementById('recetasList');
+        if (recetasList.length === 0) {
+          container.innerHTML = '<div class="text-center text-muted-foreground py-8">No hay recetas. Crea una nueva.</div>';
+          return;
+        }
+        container.innerHTML = recetasList.map(r => {
+          const costoTotal = calcCosto(r);
+          const costoUnit = r.rendimiento > 0 ? costoTotal / r.rendimiento : 0;
+          const numIng = (r.receta_ingredientes || []).length;
+          return `
+            <div class="bg-card border border-border rounded-sm overflow-hidden">
+              <div class="p-4 border-b border-border">
+                <div class="flex justify-between items-start gap-2">
+                  <div>
+                    <h3 class="font-bold text-sm uppercase">${r.nombre}</h3>
+                    <p class="text-[10px] text-muted-foreground mt-1">${r.descripcion || ''}</p>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <div class="text-lg font-mono font-bold text-primary">$${costoUnit.toFixed(2)}</div>
+                    <div class="text-[10px] text-muted-foreground uppercase">Costo/Unidad</div>
+                  </div>
+                </div>
+                <div class="flex gap-3 mt-2 text-[10px] text-muted-foreground font-mono">
+                  <span><iconify-icon icon="ph:stack"></iconify-icon> Rinde ${r.rendimiento} ${r.unidad_rendimiento}</span>
+                  <span><iconify-icon icon="ph:flask"></iconify-icon> ${numIng} insumos</span>
+                  ${r.dificultad ? `<span><iconify-icon icon="ph:gauge"></iconify-icon> ${r.dificultad}</span>` : ''}
+                </div>
+              </div>
+              <div class="bg-muted/10 p-2 flex items-center justify-end gap-1">
+                <button class="px-3 py-1 bg-secondary text-foreground text-xs font-bold border border-border rounded-sm flex items-center gap-1 edit-receta-btn" data-id="${r.id}">
+                  <iconify-icon icon="ph:pencil"></iconify-icon> Editar
+                </button>
+                <button class="px-3 py-1 bg-destructive text-foreground text-xs font-bold rounded-sm flex items-center gap-1 delete-receta-btn" data-id="${r.id}">
+                  <iconify-icon icon="ph:trash"></iconify-icon> Eliminar
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        document.querySelectorAll('.delete-receta-btn').forEach(btn => btn.addEventListener('click', handleDeleteReceta));
+        document.querySelectorAll('.edit-receta-btn').forEach(btn => btn.addEventListener('click', handleEditReceta));
+      }
+
+      async function handleDeleteReceta(e) {
+        const id = e.currentTarget.dataset.id;
+        if (confirm('¿Eliminar esta receta?')) {
+          try {
+            const res = await fetch(`${API_BASE}/recetas/${id}`, { method: 'DELETE' });
+            if (!res.ok) throw new Error('Failed to delete');
+            loadRecetas();
+          } catch (error) {
+            alert('Error al eliminar receta: ' + error.message);
+          }
+        }
+      }
+
+      function addIngredienteRow(preset) {
+        ingredienteRowCount++;
+        const rowId = `ing-row-${ingredienteRowCount}`;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'bg-secondary/30 border border-border rounded-sm p-2 flex items-center gap-2';
+        wrapper.id = rowId;
+
+        const options = insumosCache.map(i =>
+          `<option value="${i.id}" data-unidad="${i.unidad_medida}" data-precio="${i.precio_unitario}" ${preset && preset.insumo_id === i.id ? 'selected' : ''}>${i.nombre}</option>`
+        ).join('');
+
+        wrapper.innerHTML = `
+          <select class="ing-select flex-1 bg-input border border-border rounded-sm p-2 text-xs">
+            <option value="">Seleccionar insumo...</option>
+            ${options}
+          </select>
+          <input type="number" step="0.01" class="ing-cantidad w-20 bg-input border border-border rounded-sm p-2 text-xs font-mono" placeholder="Cant." value="${preset ? preset.cantidad : ''}" />
+          <span class="ing-unidad text-[10px] text-muted-foreground w-10">${preset ? preset.unidad_medida : ''}</span>
+          <button type="button" class="ing-remove text-muted-foreground hover:text-destructive">
+            <iconify-icon icon="ph:trash-bold"></iconify-icon>
+          </button>
+        `;
+
+        document.getElementById('ingredientesRows').appendChild(wrapper);
+
+        const select = wrapper.querySelector('.ing-select');
+        const unidadSpan = wrapper.querySelector('.ing-unidad');
+        select.addEventListener('change', () => {
+          const opt = select.options[select.selectedIndex];
+          unidadSpan.textContent = opt.dataset.unidad || '';
+          recalcCosto();
+        });
+        wrapper.querySelector('.ing-cantidad').addEventListener('input', recalcCosto);
+        wrapper.querySelector('.ing-remove').addEventListener('click', () => {
+          wrapper.remove();
+          recalcCosto();
+        });
+
+        recalcCosto();
+      }
+
+      function recalcCosto() {
+        let costoTotal = 0;
+        document.querySelectorAll('#ingredientesRows > div').forEach(row => {
+          const select = row.querySelector('.ing-select');
+          const cantidad = parseFloat(row.querySelector('.ing-cantidad').value) || 0;
+          const opt = select.options[select.selectedIndex];
+          const precio = opt ? parseFloat(opt.dataset.precio) || 0 : 0;
+          costoTotal += cantidad * precio;
+        });
+        const rendimiento = parseFloat(document.getElementById('rendimiento').value) || 1;
+        const costoUnitario = costoTotal / rendimiento;
+        const margen = parseFloat(document.getElementById('margen').value) || 0;
+        const precioSugerido = costoUnitario * (1 + margen / 100);
+        const ganancia = precioSugerido - costoUnitario;
+
+        document.getElementById('costoUnitario').textContent = `$${costoUnitario.toFixed(2)}`;
+        document.getElementById('precioSugerido').textContent = `$${precioSugerido.toFixed(2)}`;
+        document.getElementById('gananciaUnidad').textContent = `+$${ganancia.toFixed(2)}`;
+      }
+
+      function openModal(receta) {
+        document.getElementById('recetaForm').reset();
+        document.getElementById('ingredientesRows').innerHTML = '';
+        currentEditId = receta ? receta.id : null;
+        document.getElementById('modalTitle').textContent = receta ? 'Editar Receta' : 'Nueva Receta';
+
+        if (receta) {
+          document.getElementById('nombre').value = receta.nombre;
+          document.getElementById('descripcion').value = receta.descripcion || '';
+          document.getElementById('rendimiento').value = receta.rendimiento;
+          document.getElementById('unidad_rendimiento').value = receta.unidad_rendimiento;
+          document.getElementById('tiempo_produccion').value = receta.tiempo_produccion || '';
+          document.getElementById('dificultad').value = receta.dificultad || 'Media';
+          (receta.receta_ingredientes || []).forEach(ing => {
+            addIngredienteRow({ insumo_id: ing.insumos ? ing.insumos.id : ing.insumo_id, cantidad: ing.cantidad, unidad_medida: ing.unidad_medida });
+          });
+        } else {
+          document.getElementById('rendimiento').value = 10;
+          document.getElementById('margen').value = 60;
+        }
+        recalcCosto();
+        document.getElementById('recetaModal').classList.add('show');
+      }
+
+      async function handleEditReceta(e) {
+        const id = e.currentTarget.dataset.id;
+        try {
+          const res = await fetch(`${API_BASE}/recetas/${id}`);
+          if (!res.ok) throw new Error('Failed to fetch receta');
+          const receta = await res.json();
+          openModal(receta);
+        } catch (error) {
+          alert('Error al cargar receta: ' + error.message);
+        }
+      }
+
+      document.getElementById('newRecetaBtn').addEventListener('click', () => openModal(null));
+      document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('recetaModal').classList.remove('show');
+      });
+      document.getElementById('recetaModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('recetaModal')) {
+          document.getElementById('recetaModal').classList.remove('show');
+        }
+      });
+      document.getElementById('addIngredienteBtn').addEventListener('click', () => addIngredienteRow(null));
+      document.getElementById('rendimiento').addEventListener('input', recalcCosto);
+      document.getElementById('margen').addEventListener('input', recalcCosto);
+
+      document.getElementById('recetaForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const ingredientes = [];
+        document.querySelectorAll('#ingredientesRows > div').forEach(row => {
+          const select = row.querySelector('.ing-select');
+          const cantidad = parseFloat(row.querySelector('.ing-cantidad').value);
+          const opt = select.options[select.selectedIndex];
+          if (select.value && cantidad > 0) {
+            ingredientes.push({
+              insumo_id: parseInt(select.value),
+              cantidad,
+              unidad_medida: opt.dataset.unidad
+            });
+          }
+        });
+
+        const data = {
+          nombre: document.getElementById('nombre').value,
+          descripcion: document.getElementById('descripcion').value,
+          rendimiento: parseFloat(document.getElementById('rendimiento').value),
+          unidad_rendimiento: document.getElementById('unidad_rendimiento').value,
+          tiempo_produccion: parseInt(document.getElementById('tiempo_produccion').value) || null,
+          dificultad: document.getElementById('dificultad').value,
+          ingredientes
+        };
+
+        try {
+          const url = currentEditId ? `${API_BASE}/recetas/${currentEditId}` : `${API_BASE}/recetas`;
+          const method = currentEditId ? 'PUT' : 'POST';
+          const res = await fetch(url, {
+            method,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          if (!res.ok) throw new Error('Failed to save receta');
+          document.getElementById('recetaModal').classList.remove('show');
+          loadRecetas();
+        } catch (error) {
+          alert('Error: ' + error.message);
+        }
+      });
+
+      (async function init() {
+        try {
+          insumosCache = await fetchInsumos();
+        } catch (e) {
+          console.error('Error loading insumos for form:', e);
+        }
+        loadRecetas();
+      })();
+    </script>
   </body>
 </html>
