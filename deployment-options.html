@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opciones de Deployment en la Nube</title>
+  <style>
+    :root {
+      --primary: #00c4a9;
+      --accent: #f5d50b;
+      --success: #10b981;
+      --bg: #0f1117;
+      --card: #1a1d21;
+      --text: #f1f3f5;
+      --muted: #9ca3af;
+      --border: #374151;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .header h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .header p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .recommended-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--success), var(--primary));
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .option-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .option-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 196, 169, 0.1);
+    }
+
+    .option-card.recommended {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, var(--card), rgba(0, 196, 169, 0.05));
+    }
+
+    .option-card.recommended::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 12px;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .option-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #022c1f;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .option-badge.recommended {
+      background: linear-gradient(135deg, var(--success), var(--primary));
+      color: white;
+    }
+
+    .option-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .option-description {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .option-specs {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .option-specs li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .option-specs li:before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: bold;
+      min-width: 16px;
+    }
+
+    .option-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cost-badge {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--success);
+    }
+
+    .setup-time {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .quick-start {
+      background: var(--card);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 40px;
+    }
+
+    .quick-start h2 {
+      color: var(--primary);
+      margin-bottom: 24px;
+      font-size: 22px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .step-number {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step-description {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .comparison-table thead {
+      background: var(--bg);
+    }
+
+    .comparison-table th {
+      padding: 16px;
+      text-align: left;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .check {
+      color: var(--success);
+      font-weight: bold;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .footer-text {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 28px;
+      }
+
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-table {
+        font-size: 12px;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 Deployment en la Nube</h1>
+      <p>Sistema de Gestión de Inventario - Producción Alfalion</p>
+      <p style="font-size: 14px; color: var(--muted); margin-top: 16px;">Elige la mejor opción para desplegar tu aplicación</p>
+    </div>
+
+    <div class="quick-start">
+      <h2>⚡ Inicio Rápido (Recomendado: Vercel)</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1️⃣</div>
+          <div class="step-title">Ir a Vercel</div>
+          <div class="step-description">Visita https://vercel.com y haz sign up con GitHub</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2️⃣</div>
+          <div class="step-title">Conectar Repo</div>
+          <div class="step-description">Selecciona tu repositorio agent-skills</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3️⃣</div>
+          <div class="step-title">Deploy</div>
+          <div class="step-description">Haz click en Deploy y espera 30 segundos</div>
+        </div>
+        <div class="step">
+          <div class="step-number">✅</div>
+          <div class="step-title">¡Listo!</div>
+          <div class="step-description">Tu app está en vivo en https://agent-skills.vercel.app</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Opciones de Deployment</h2>
+    <div class="options-grid">
+      <!-- Vercel -->
+      <div class="option-card recommended">
+        <span class="option-badge recommended">⭐ RECOMENDADO</span>
+        <div class="option-title">Vercel</div>
+        <p class="option-description">La opción más rápida y sencilla. Perfecto para aplicaciones estáticas.</p>
+        <ul class="option-specs">
+          <li>Deployment automático desde GitHub</li>
+          <li>CDN global incluido</li>
+          <li>SSL automático</li>
+          <li>Dominio personalizado gratis</li>
+          <li>Analytics integrado</li>
+        </ul>
+        <div class="option-footer">
+          <span class="cost-badge">🆓 Gratis</span>
+          <span class="setup-time">⏱️ 2 min</span>
+        </div>
+      </div>
+
+      <!-- Netlify -->
+      <div class="option-card">
+        <span class="option-badge">✨ ALTERNATIVA</span>
+        <div class="option-title">Netlify</div>
+        <p class="option-description">Similar a Vercel. Excelente también para estático + funciones.</p>
+        <ul class="option-specs">
+          <li>Deployment automático desde GitHub</li>
+          <li>CDN global de nivel empresarial</li>
+          <li>Funciones serverless gratuitas</li>
+          <li>SSL automático</li>
+          <li>Formularios integrados</li>
+        </ul>
+        <div class="option-footer">
+          <span class="cost-badge">🆓 Gratis</span>
+          <span class="setup-time">⏱️ 2 min</span>
+        </div>
+      </div>
+
+      <!-- GitHub Pages -->
+      <div class="option-card">
+        <span class="option-badge">📚 SIMPLE</span>
+        <div class="option-title">GitHub Pages</div>
+        <p class="option-description">Lo más simple si ya tienes el código en GitHub.</p>
+        <ul class="option-specs">
+          <li>Completamente gratis</li>
+          <li>Hosting en GitHub</li>
+          <li>Sin configuración extra</li>
+          <li>URL: github.io/repo</li>
+          <li>Solo repos públicos</li>
+        </ul>
+        <div class="option-footer">
+          <span class="cost-badge">🆓 Gratis</span>
+          <span class="setup-time">⏱️ 3 min</span>
+        </div>
+      </div>
+
+      <!-- Railway -->
+      <div class="option-card">
+        <span class="option-badge">🚆 MODERNO</span>
+        <div class="option-title">Railway</div>
+        <p class="option-description">Moderno y flexible. Crédito gratis para nuevos usuarios.</p>
+        <ul class="option-specs">
+          <li>$5/mes de crédito inicial</li>
+          <li>Deployment desde GitHub</li>
+          <li>Escalable automáticamente</li>
+          <li>Muy intuitivo</li>
+          <li>Soporte para backend</li>
+        </ul>
+        <div class="option-footer">
+          <span class="cost-badge">$5/mes*</span>
+          <span class="setup-time">⏱️ 3 min</span>
+        </div>
+      </div>
+
+      <!-- Digital Ocean -->
+      <div class="option-card">
+        <span class="option-badge">💪 ROBUSTO</span>
+        <div class="option-title">Digital Ocean</div>
+        <p class="option-description">Más control y potencia. Excelente para crecer.</p>
+        <ul class="option-specs">
+          <li>App Platform muy simple</li>
+          <li>Escalable automáticamente</li>
+          <li>Base de datos incluida</li>
+          <li>Dominio personalizado</li>
+          <li>$5/mes del App Platform</li>
+        </ul>
+        <div class="option-footer">
+          <span class="cost-badge">$5/mes</span>
+          <span class="setup-time">⏱️ 5 min</span>
+        </div>
+      </div>
+
+      <!-- Heroku -->
+      <div class="option-card">
+        <span class="option-badge">🧬 CLÁSICO</span>
+        <div class="option-title">Heroku</div>
+        <p class="option-description">El clásico de los desarrolladores. Bueno pero ahora tiene costo.</p>
+        <ul class="option-specs">
+          <li>Deployment desde GitHub</li>
+          <li>Muy fácil de usar</li>
+          <li>Add-ons para extensiones</li>
+          <li>Soporte para varios lenguajes</li>
+          <li>Desde $7/mes (Eco)</li>
+        </ul>
+        <div class="option-footer">
+          <span class="cost-badge">$7/mes</span>
+          <span class="setup-time">⏱️ 5 min</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Comparativa Detallada</h2>
+    <div style="overflow-x: auto;">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Plataforma</th>
+            <th>Costo</th>
+            <th>Setup</th>
+            <th>Velocidad</th>
+            <th>Mejor para</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Vercel</strong></td>
+            <td><span class="check">🆓 Gratis</span></td>
+            <td>2 min</td>
+            <td>⚡⚡⚡ Ultra</td>
+            <td>Estático + Vercel Functions</td>
+          </tr>
+          <tr>
+            <td><strong>Netlify</strong></td>
+            <td><span class="check">🆓 Gratis</span></td>
+            <td>2 min</td>
+            <td>⚡⚡⚡ Ultra</td>
+            <td>Estático + Netlify Functions</td>
+          </tr>
+          <tr>
+            <td><strong>GitHub Pages</strong></td>
+            <td><span class="check">🆓 Gratis</span></td>
+            <td>3 min</td>
+            <td>⚡⚡ Rápido</td>
+            <td>Proyectos públicos simples</td>
+          </tr>
+          <tr>
+            <td><strong>Railway</strong></td>
+            <td>$5/mes*</td>
+            <td>3 min</td>
+            <td>⚡⚡⚡ Ultra</td>
+            <td>Principiantes con backend</td>
+          </tr>
+          <tr>
+            <td><strong>Digital Ocean</strong></td>
+            <td>$5/mes</td>
+            <td>5 min</td>
+            <td>⚡⚡⚡ Ultra</td>
+            <td>Aplicaciones robustas</td>
+          </tr>
+          <tr>
+            <td><strong>Heroku</strong></td>
+            <td>$7/mes+</td>
+            <td>5 min</td>
+            <td>⚡⚡ Bueno</td>
+            <td>Aplicaciones con backend</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">Después del Deployment</h2>
+    <div class="options-grid">
+      <div class="option-card">
+        <div class="option-title">Updates Automáticos</div>
+        <p class="option-description">Todos los cambios que hagas en GitHub se desplegan automáticamente.</p>
+        <ul class="option-specs">
+          <li>Push a main → Deploy automático</li>
+          <li>Sin pasos manuales</li>
+          <li>Versiones guardadas</li>
+          <li>Rollback disponible</li>
+        </ul>
+      </div>
+
+      <div class="option-card">
+        <div class="option-title">Dominio Personalizado</div>
+        <p class="option-description">Usa tu propio dominio (ej: inventario.tuempresa.com).</p>
+        <ul class="option-specs">
+          <li>Compra en Namecheap (~$8/año)</li>
+          <li>Apunta DNS a tu plataforma</li>
+          <li>SSL automático</li>
+          <li>Email con dominio (opcional)</li>
+        </ul>
+      </div>
+
+      <div class="option-card">
+        <div class="option-title">Backend (Futuro)</div>
+        <p class="option-description">Cuando necesites agregar backend.</p>
+        <ul class="option-specs">
+          <li>Vercel Functions o API</li>
+          <li>Base de datos (Supabase/Firebase)</li>
+          <li>Autenticación (Auth0/NextAuth)</li>
+          <li>Escalable automáticamente</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-text">
+      <p><strong>Mi recomendación:</strong> Usa Vercel para tu aplicación. Es gratis, rápido y tiene 0 configuración.</p>
+      <p style="margin-top: 12px;">📖 Documentación: https://vercel.com/docs</p>
+    </div>
+  </div>
+</body>
+</html>

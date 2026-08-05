@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashboardPrincipal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+    <style type="text/tailwindcss">
+      @theme inline {
+        --color-background: var(--background);
+        --color-foreground: var(--foreground);
+        --color-primary: var(--primary);
+        --color-primary-foreground: var(--primary-foreground);
+        --color-secondary: var(--secondary);
+        --color-secondary-foreground: var(--secondary-foreground);
+        --color-muted: var(--muted);
+        --color-muted-foreground: var(--muted-foreground);
+        --color-accent: var(--accent);
+        --color-accent-foreground: var(--accent-foreground);
+        --color-destructive: var(--destructive);
+        --color-card: var(--card);
+        --color-card-foreground: var(--card-foreground);
+        --color-popover: var(--popover);
+        --color-popover-foreground: var(--popover-foreground);
+        --color-border: var(--border);
+        --color-input: var(--input);
+        --color-ring: var(--ring);
+        --color-chart-1: var(--chart-1);
+        --color-chart-2: var(--chart-2);
+        --color-chart-3: var(--chart-3);
+        --color-chart-4: var(--chart-4);
+        --color-chart-5: var(--chart-5);
+
+        --font-font-sans: var(--font-sans);
+        --font-font-heading: var(--font-heading);
+        --font-font-serif: var(--font-serif);
+        --font-font-mono: var(--font-mono);
+      }
+
+      @theme {
+        --radius-xs: calc(var(--radius) - 8px);
+        --radius-sm: calc(var(--radius) - 4px);
+        --radius-md: calc(var(--radius) - 2px);
+        --radius-lg: var(--radius);
+        --radius-xl: calc(var(--radius) + 4px);
+        --radius-2xl: calc(var(--radius) + 8px);
+        --radius-3xl: calc(var(--radius) + 16px);
+        --radius-4xl: calc(var(--radius) + 24px);
+      }
+
+      * {
+        corner-shape: var(--shape, round);
+      }
+
+      .rounded-full, .rounded-none,
+      .rounded-t-full, .rounded-t-none,
+      .rounded-r-full, .rounded-r-none,
+      .rounded-b-full, .rounded-b-none,
+      .rounded-l-full, .rounded-l-none,
+      .rounded-s-full, .rounded-s-none,
+      .rounded-e-full, .rounded-e-none,
+      .rounded-tl-full, .rounded-tl-none,
+      .rounded-tr-full, .rounded-tr-none,
+      .rounded-bl-full, .rounded-bl-none,
+      .rounded-br-full, .rounded-br-none,
+      .rounded-ss-full, .rounded-ss-none,
+      .rounded-se-full, .rounded-se-none,
+      .rounded-es-full, .rounded-es-none,
+      .rounded-ee-full, .rounded-ee-none {
+        corner-shape: round;
+      }
+
+      @utility rounded-* {
+        border-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-t-* {
+        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-r-* {
+        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-b-* {
+        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-l-* {
+        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-tl-* {
+        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-tr-* {
+        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-bl-* {
+        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-br-* {
+        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-s-* {
+        border-start-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+        border-end-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-e-* {
+        border-start-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+        border-end-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-ss-* {
+        border-start-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-se-* {
+        border-start-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-es-* {
+        border-end-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+      @utility rounded-ee-* {
+        border-end-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
+      }
+
+      :root {
+        --shape: round;
+        --shape-multiplier: 1;
+
+          --background: #12141799;
+        --foreground: #F1F3F5;
+        --primary: #00c4a9;
+        --primary-foreground: #022c1f;
+        --secondary: #2A2F35;
+        --secondary-foreground: #D1D5DB;
+        --muted: #272A30;
+        --muted-foreground: #9CA3AF;
+        --accent: #f5d50b;
+        --accent-foreground: #451A03;
+        --destructive: #F43F5E;
+        --card: #1A1D21;
+        --card-foreground: #F1F3F5;
+        --popover: #1A1D21;
+        --popover-foreground: #F1F3F5;
+        --border: #374151;
+        --input: #272A30;
+        --ring: #00C48C;
+        --chart-1: #00C48C;
+        --chart-2: #F59E0B;
+        --chart-3: #F43F5E;
+        --chart-4: #3B82F6;
+        --chart-5: #8B5CF6;
+
+        --font-sans: "Inter";
+        --font-heading: "Inter";
+        --font-serif: "Playfair Display";
+        --font-mono: "JetBrains Mono";
+
+        --radius: 1.5rem;
+      }
+
+      /* Prevent layout shift for icons without explicit dimensions */
+      iconify-icon:not([width]):not([height]) {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+      }
+
+      /* Hide scrollbars */
+      *,
+      *::before,
+      *::after {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      *::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen bg-background text-foreground pb-20 font-sans">
+      <header class="flex items-center justify-between p-4 border-b border-border bg-card">
+        <div class="flex items-center gap-2">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded bg-primary text-primary-foreground font-bold font-heading"
+          >
+            <iconify-icon icon="ph:cube-fill" class="text-xl"></iconify-icon>
+          </div>
+          <h1 class="text-lg font-heading font-semibold tracking-tight">INVENTARIO</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="text-right hidden sm:block">
+            <p class="text-xs font-semibold">Producción Alfalion</p>
+            <p class="text-[10px] text-muted-foreground uppercase tracking-widest">Turno Mañana</p>
+          </div>
+          <img
+            src="https://lh3.googleusercontent.com/a/ACg8ocI3PGhcQKIKoQG_0OFoTgTnFgL9g6D4VIwubMe9jQvk9fsGiw=s96-c"
+            alt="User"
+            class="w-8 h-8 rounded object-cover border border-border"
+          />
+        </div>
+      </header>
+      <main class="flex-1 p-4 space-y-6 overflow-y-auto">
+        <section class="grid grid-cols-3 gap-2">
+          <button
+            class="flex flex-col items-center justify-center gap-2 p-3 bg-primary text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
+          >
+            <iconify-icon icon="ph:package-fill" class="text-2xl"></iconify-icon
+            ><span class="text-[10px] font-bold uppercase tracking-wider text-center leading-tight"
+              >Registrar<br />Compra</span
+            ></button
+          ><button
+            class="flex flex-col items-center justify-center gap-2 p-3 bg-accent text-accent-foreground rounded-sm hover:opacity-90 transition-opacity"
+          >
+            <iconify-icon icon="ph:warning-circle-fill" class="text-2xl"></iconify-icon
+            ><span class="text-[10px] font-bold uppercase tracking-wider text-center leading-tight"
+              >Registrar<br />Merma</span
+            ></button
+          ><button
+            class="flex flex-col items-center justify-center gap-2 p-3 bg-secondary text-secondary-foreground border border-border rounded-sm hover:bg-muted transition-colors"
+          >
+            <iconify-icon icon="ph:factory-fill" class="text-2xl"></iconify-icon
+            ><span class="text-[10px] font-bold uppercase tracking-wider text-center leading-tight"
+              >Orden de<br />Producción</span
+            >
+          </button>
+        </section>
+        <section class="grid grid-cols-2 gap-2">
+          <div class="bg-card border border-border p-3 rounded-sm flex flex-col justify-between">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs text-muted-foreground uppercase tracking-wider font-semibold"
+                >Valor Inventario</span
+              ><iconify-icon
+                icon="ph:currency-dollar-bold"
+                class="text-muted-foreground"
+              ></iconify-icon>
+            </div>
+            <div class="text-xl font-heading font-bold tracking-tight">$42,850.00</div>
+            <div class="text-[10px] text-primary flex items-center mt-1 gap-1">
+              <iconify-icon icon="ph:trend-up-bold"></iconify-icon><span>+2.4% vs mes ant.</span>
+            </div>
+          </div>
+          <div
+            class="bg-card border-l-2 border-l-accent border-y border-r border-y-border border-r-border p-3 rounded-sm flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs text-muted-foreground uppercase tracking-wider font-semibold"
+                >Alertas Stock</span
+              ><iconify-icon icon="ph:bell-bold" class="text-accent"></iconify-icon>
+            </div>
+            <div class="text-xl font-heading font-bold text-accent tracking-tight">4 Insumos</div>
+            <div class="text-[10px] text-muted-foreground mt-1">Requieren reposición</div>
+          </div>
+        </section>
+        <section>
+          <h2
+            class="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-2"
+          >
+            <iconify-icon icon="ph:warning-bold" class="text-accent"></iconify-icon> Insumos
+            Críticos
+          </h2>
+          <div class="bg-card border border-border rounded-sm overflow-hidden text-sm">
+            <div
+              class="grid grid-cols-[1fr_auto_auto] gap-4 p-2 bg-muted/50 border-b border-border text-xs font-semibold text-muted-foreground"
+            >
+              <div>Insumo</div>
+              <div class="text-right">Actual</div>
+              <div class="text-right">Mínimo</div>
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto_auto] gap-4 p-2 border-b border-border items-center"
+            >
+              <div class="font-mono text-xs truncate">Cera de Soya AP</div>
+              <div
+                class="text-right font-mono text-xs text-destructive font-bold flex items-center gap-1 justify-end"
+              >
+                12.5 <span class="text-[10px] text-muted-foreground">kg</span>
+              </div>
+              <div class="text-right font-mono text-xs text-muted-foreground">
+                20.0 <span class="text-[10px]">kg</span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto_auto] gap-4 p-2 bg-muted/20 border-b border-border items-center"
+            >
+              <div class="font-mono text-xs truncate">Esencia Vainilla</div>
+              <div
+                class="text-right font-mono text-xs text-accent font-bold flex items-center gap-1 justify-end"
+              >
+                450 <span class="text-[10px] text-muted-foreground">ml</span>
+              </div>
+              <div class="text-right font-mono text-xs text-muted-foreground">
+                500 <span class="text-[10px]">ml</span>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto_auto] gap-4 p-2 border-b border-border items-center"
+            >
+              <div class="font-mono text-xs truncate">Pabilo Algodón</div>
+              <div
+                class="text-right font-mono text-xs text-accent font-bold flex items-center gap-1 justify-end"
+              >
+                120 <span class="text-[10px] text-muted-foreground">m</span>
+              </div>
+              <div class="text-right font-mono text-xs text-muted-foreground">
+                150 <span class="text-[10px]">m</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2
+            class="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-2"
+          >
+            <iconify-icon icon="ph:chart-bar-bold"></iconify-icon> Top Producción (Últimos 7 días)
+          </h2>
+          <div class="bg-card border border-border rounded-sm p-4 h-48 flex items-end gap-2">
+            <div class="flex-1 flex flex-col items-center justify-end h-full gap-2">
+              <div class="text-[10px] font-mono text-muted-foreground">120u</div>
+              <div
+                class="w-full bg-primary/20 border border-primary relative group flex-1"
+                style="max-height: 100%;"
+              >
+                <div class="absolute bottom-0 w-full bg-primary" style="height: 100%;"></div>
+              </div>
+              <div
+                class="text-[10px] font-mono text-center truncate w-full"
+                title="Vela Aromática 250g"
+              >
+                Vela 250g
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end h-full gap-2">
+              <div class="text-[10px] font-mono text-muted-foreground">85u</div>
+              <div
+                class="w-full bg-secondary border border-border relative flex-1"
+                style="max-height: 100%;"
+              >
+                <div
+                  class="absolute bottom-0 w-full bg-muted-foreground/50"
+                  style="height: 70%;"
+                ></div>
+              </div>
+              <div class="text-[10px] font-mono text-center truncate w-full">Vela 100g</div>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end h-full gap-2">
+              <div class="text-[10px] font-mono text-muted-foreground">40u</div>
+              <div
+                class="w-full bg-secondary border border-border relative flex-1"
+                style="max-height: 100%;"
+              >
+                <div
+                  class="absolute bottom-0 w-full bg-muted-foreground/50"
+                  style="height: 33%;"
+                ></div>
+              </div>
+              <div class="text-[10px] font-mono text-center truncate w-full">Difusor</div>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end h-full gap-2">
+              <div class="text-[10px] font-mono text-muted-foreground">25u</div>
+              <div
+                class="w-full bg-secondary border border-border relative flex-1"
+                style="max-height: 100%;"
+              >
+                <div
+                  class="absolute bottom-0 w-full bg-muted-foreground/50"
+                  style="height: 20%;"
+                ></div>
+              </div>
+              <div class="text-[10px] font-mono text-center truncate w-full">Spray</div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <nav
+        class="fixed bottom-0 left-0 right-0 bg-card border-t border-border flex items-center justify-between pb-safe"
+      >
+        <button class="flex-1 flex flex-col items-center justify-center py-3 text-primary">
+          <iconify-icon icon="ph:squares-four-fill" class="text-xl mb-1"></iconify-icon
+          ><span class="text-[10px] font-semibold">Inicio</span></button
+        ><button
+          class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <iconify-icon icon="ph:box-arrow-down" class="text-xl mb-1"></iconify-icon
+          ><span class="text-[10px] font-semibold">Insumos</span></button
+        ><button
+          class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <iconify-icon icon="ph:flask" class="text-xl mb-1"></iconify-icon
+          ><span class="text-[10px] font-semibold">Recetas</span></button
+        ><button
+          class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <iconify-icon icon="ph:factory" class="text-xl mb-1"></iconify-icon
+          ><span class="text-[10px] font-semibold">Producción</span>
+        </button>
+      </nav>
+    </div>
+  </body>
+</html>
