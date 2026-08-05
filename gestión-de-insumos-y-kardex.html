@@ -6,18 +6,9 @@
     <title>GestiónDeInsumosYKardex</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
     <style type="text/tailwindcss">
@@ -45,13 +36,11 @@
         --color-chart-3: var(--chart-3);
         --color-chart-4: var(--chart-4);
         --color-chart-5: var(--chart-5);
-
         --font-font-sans: var(--font-sans);
         --font-font-heading: var(--font-heading);
         --font-font-serif: var(--font-serif);
         --font-font-mono: var(--font-mono);
       }
-
       @theme {
         --radius-xs: calc(var(--radius) - 8px);
         --radius-sm: calc(var(--radius) - 4px);
@@ -62,86 +51,27 @@
         --radius-3xl: calc(var(--radius) + 16px);
         --radius-4xl: calc(var(--radius) + 24px);
       }
-
-      * {
-        corner-shape: var(--shape, round);
-      }
-
-      .rounded-full, .rounded-none,
-      .rounded-t-full, .rounded-t-none,
-      .rounded-r-full, .rounded-r-none,
-      .rounded-b-full, .rounded-b-none,
-      .rounded-l-full, .rounded-l-none,
-      .rounded-s-full, .rounded-s-none,
-      .rounded-e-full, .rounded-e-none,
-      .rounded-tl-full, .rounded-tl-none,
-      .rounded-tr-full, .rounded-tr-none,
-      .rounded-bl-full, .rounded-bl-none,
-      .rounded-br-full, .rounded-br-none,
-      .rounded-ss-full, .rounded-ss-none,
-      .rounded-se-full, .rounded-se-none,
-      .rounded-es-full, .rounded-es-none,
-      .rounded-ee-full, .rounded-ee-none {
-        corner-shape: round;
-      }
-
-      @utility rounded-* {
-        border-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-t-* {
-        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-r-* {
-        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-b-* {
-        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-l-* {
-        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-tl-* {
-        border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-tr-* {
-        border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-bl-* {
-        border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-br-* {
-        border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-s-* {
-        border-start-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-end-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-e-* {
-        border-start-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-        border-end-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-ss-* {
-        border-start-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-se-* {
-        border-start-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-es-* {
-        border-end-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-      @utility rounded-ee-* {
-        border-end-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1));
-      }
-
+      * { corner-shape: var(--shape, round); }
+      .rounded-full, .rounded-none, .rounded-t-full, .rounded-t-none, .rounded-r-full, .rounded-r-none, .rounded-b-full, .rounded-b-none, .rounded-l-full, .rounded-l-none, .rounded-s-full, .rounded-s-none, .rounded-e-full, .rounded-e-none, .rounded-tl-full, .rounded-tl-none, .rounded-tr-full, .rounded-tr-none, .rounded-bl-full, .rounded-bl-none, .rounded-br-full, .rounded-br-none, .rounded-ss-full, .rounded-ss-none, .rounded-se-full, .rounded-se-none, .rounded-es-full, .rounded-es-none, .rounded-ee-full, .rounded-ee-none { corner-shape: round; }
+      @utility rounded-* { border-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-t-* { border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-r-* { border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-b-* { border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-l-* { border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-tl-* { border-top-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-tr-* { border-top-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-bl-* { border-bottom-left-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-br-* { border-bottom-right-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-s-* { border-start-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); border-end-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-e-* { border-start-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); border-end-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-ss-* { border-start-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-se-* { border-start-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-es-* { border-end-start-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
+      @utility rounded-ee-* { border-end-end-radius: calc(--value(--radius-*, [length], [percentage]) * var(--shape-multiplier, 1)); }
       :root {
         --shape: round;
         --shape-multiplier: 1;
-
-          --background: #12141799;
+        --background: #12141799;
         --foreground: #F1F3F5;
         --primary: #00c4a9;
         --primary-foreground: #022c1f;
@@ -164,216 +94,355 @@
         --chart-3: #F43F5E;
         --chart-4: #3B82F6;
         --chart-5: #8B5CF6;
-
         --font-sans: "Inter";
         --font-heading: "Inter";
         --font-serif: "Playfair Display";
         --font-mono: "JetBrains Mono";
-
         --radius: 1.5rem;
       }
-
-      /* Prevent layout shift for icons without explicit dimensions */
       iconify-icon:not([width]):not([height]) {
         display: inline-block;
         width: 1em;
         height: 1em;
       }
-
-      /* Hide scrollbars */
-      *,
-      *::before,
-      *::after {
+      *, *::before, *::after {
         scrollbar-width: none;
         -ms-overflow-style: none;
       }
       *::-webkit-scrollbar {
         display: none;
       }
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 50;
+        justify-content: center;
+        align-items: center;
+      }
+      .modal.show {
+        display: flex;
+      }
+      .modal-content {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        max-width: 500px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
     </style>
   </head>
   <body>
     <div class="flex flex-col min-h-screen bg-background text-foreground pb-20 font-sans">
-      <header
-        class="flex items-center justify-between p-4 border-b border-border bg-card sticky top-0 z-10"
-      >
+      <header class="flex items-center justify-between p-4 border-b border-border bg-card sticky top-0 z-10">
         <div class="flex items-center gap-2">
           <iconify-icon icon="ph:box-arrow-down-fill" class="text-xl text-primary"></iconify-icon>
-          <h1 class="text-lg font-heading font-semibold tracking-tight uppercase">
-            Insumos &amp; Kardex
-          </h1>
+          <h1 class="text-lg font-heading font-semibold tracking-tight uppercase">Insumos &amp; Kardex</h1>
         </div>
-        <button
-          class="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center"
-        >
+        <button id="newInsumoBtn" class="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center">
           <iconify-icon icon="ph:plus-bold" class="text-lg"></iconify-icon>
         </button>
       </header>
       <main class="flex-1 p-4 space-y-4">
         <div class="flex gap-2">
           <div class="relative flex-1">
-            <iconify-icon
-              icon="ph:magnifying-glass"
-              class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-            ></iconify-icon
-            ><input
-              type="text"
-              placeholder="Buscar insumo..."
-              class="w-full bg-input border border-border rounded-sm py-2 pl-9 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary"
-            />
+            <iconify-icon icon="ph:magnifying-glass" class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"></iconify-icon>
+            <input id="searchInput" type="text" placeholder="Buscar insumo..." class="w-full bg-input border border-border rounded-sm py-2 pl-9 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary" />
           </div>
-          <button
-            class="bg-secondary border border-border rounded-sm px-3 flex items-center justify-center"
-          >
+          <button class="bg-secondary border border-border rounded-sm px-3 flex items-center justify-center">
             <iconify-icon icon="ph:funnel" class="text-lg"></iconify-icon>
           </button>
         </div>
-        <div class="space-y-2">
-          <div class="bg-card border border-border rounded-sm overflow-hidden">
-            <div class="p-3 border-b border-border flex justify-between items-start">
-              <div>
-                <h3 class="font-bold text-sm uppercase">Cera de Soya Premium</h3>
-                <p class="text-[10px] text-muted-foreground font-mono">ID: IN-001 • Merma: 3.5%</p>
-              </div>
-              <div class="text-right">
-                <div class="text-lg font-mono font-bold text-destructive">
-                  12.50 <span class="text-xs">kg</span>
-                </div>
-                <div class="text-[10px] text-muted-foreground uppercase">Stock Actual</div>
-              </div>
-            </div>
-            <div class="bg-muted/10 p-2 flex items-center justify-between gap-2">
-              <div class="flex gap-1">
-                <button
-                  class="px-3 py-1 bg-secondary text-foreground text-xs font-bold border border-border rounded-sm flex items-center gap-1"
-                >
-                  <iconify-icon icon="ph:minus-bold"></iconify-icon> Salida</button
-                ><button
-                  class="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-sm flex items-center gap-1"
-                >
-                  <iconify-icon icon="ph:plus-bold"></iconify-icon> Entrada
-                </button>
-              </div>
-              <button
-                class="text-xs text-muted-foreground flex items-center gap-1 px-2 py-1 hover:bg-muted rounded transition-colors"
-              >
-                Kardex <iconify-icon icon="ph:caret-down-bold"></iconify-icon>
-              </button>
-            </div>
-            <div class="bg-background border-t border-border text-[10px]">
-              <table class="w-full text-left">
-                <thead>
-                  <tr class="text-muted-foreground uppercase border-b border-border">
-                    <th class="p-2 font-semibold">Fecha</th>
-                    <th class="p-2 font-semibold">Movimiento</th>
-                    <th class="p-2 font-semibold text-right">Cant.</th>
-                    <th class="p-2 font-semibold text-right">Saldo</th>
-                  </tr>
-                </thead>
-                <tbody class="font-mono">
-                  <tr class="border-b border-border/50">
-                    <td class="p-2">12/05 09:15</td>
-                    <td class="p-2">Salida Prod. #442</td>
-                    <td class="p-2 text-right text-destructive">-2.50</td>
-                    <td class="p-2 text-right">12.50</td>
-                  </tr>
-                  <tr class="bg-muted/5 border-b border-border/50">
-                    <td class="p-2">10/05 14:30</td>
-                    <td class="p-2">Compra Lote #A2</td>
-                    <td class="p-2 text-right text-primary">+10.00</td>
-                    <td class="p-2 text-right">15.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="bg-card border border-border rounded-sm overflow-hidden">
-            <div class="p-3 border-b border-border flex justify-between items-start">
-              <div>
-                <h3 class="font-bold text-sm uppercase">Frasco Vidrio 250ml</h3>
-                <p class="text-[10px] text-muted-foreground font-mono">ID: IN-045 • Merma: 1.0%</p>
-              </div>
-              <div class="text-right">
-                <div class="text-lg font-mono font-bold text-foreground">
-                  412 <span class="text-xs">und</span>
-                </div>
-                <div class="text-[10px] text-muted-foreground uppercase">Stock Actual</div>
-              </div>
-            </div>
-            <div class="bg-muted/10 p-2 flex items-center justify-between gap-2">
-              <div class="flex gap-1">
-                <button
-                  class="px-3 py-1 bg-secondary text-foreground text-xs font-bold border border-border rounded-sm flex items-center gap-1"
-                >
-                  <iconify-icon icon="ph:minus-bold"></iconify-icon> Salida</button
-                ><button
-                  class="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-sm flex items-center gap-1"
-                >
-                  <iconify-icon icon="ph:plus-bold"></iconify-icon> Entrada
-                </button>
-              </div>
-              <button
-                class="text-xs text-muted-foreground flex items-center gap-1 px-2 py-1 hover:bg-muted rounded transition-colors"
-              >
-                Kardex <iconify-icon icon="ph:caret-right-bold"></iconify-icon>
-              </button>
-            </div>
-          </div>
-          <div class="bg-card border border-border rounded-sm overflow-hidden">
-            <div class="p-3 border-b border-border flex justify-between items-start">
-              <div>
-                <h3 class="font-bold text-sm uppercase">Esencia de Vainilla</h3>
-                <p class="text-[10px] text-muted-foreground font-mono">ID: IN-022 • Merma: 5.0%</p>
-              </div>
-              <div class="text-right">
-                <div class="text-lg font-mono font-bold text-accent">
-                  450 <span class="text-xs">ml</span>
-                </div>
-                <div class="text-[10px] text-muted-foreground uppercase">Stock Actual</div>
-              </div>
-            </div>
-            <div class="bg-muted/10 p-2 flex items-center justify-between gap-2">
-              <div class="flex gap-1">
-                <button
-                  class="px-3 py-1 bg-secondary text-foreground text-xs font-bold border border-border rounded-sm flex items-center gap-1"
-                >
-                  <iconify-icon icon="ph:minus-bold"></iconify-icon> Salida</button
-                ><button
-                  class="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-sm flex items-center gap-1"
-                >
-                  <iconify-icon icon="ph:plus-bold"></iconify-icon> Entrada
-                </button>
-              </div>
-              <button
-                class="text-xs text-muted-foreground flex items-center gap-1 px-2 py-1 hover:bg-muted rounded transition-colors"
-              >
-                Kardex <iconify-icon icon="ph:caret-right-bold"></iconify-icon>
-              </button>
-            </div>
-          </div>
+        <div id="insumosList" class="space-y-2">
+          <div class="text-center text-muted-foreground py-8">Cargando insumos...</div>
         </div>
       </main>
-      <nav
-        class="fixed bottom-0 left-0 right-0 bg-card border-t border-border flex items-center justify-between pb-safe"
-      >
+      <nav class="fixed bottom-0 left-0 right-0 bg-card border-t border-border flex items-center justify-between pb-safe">
+        <a href="dashboard-principal.html" class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground">
+          <iconify-icon icon="ph:squares-four" class="text-xl mb-1"></iconify-icon>
+          <span class="text-[10px] font-semibold">Inicio</span>
+        </a>
+        <a href="gestión-de-insumos-y-kardex.html" class="flex-1 flex flex-col items-center justify-center py-3 text-primary">
+          <iconify-icon icon="ph:box-arrow-down-fill" class="text-xl mb-1"></iconify-icon>
+          <span class="text-[10px] font-semibold">Insumos</span>
+        </a>
+        <a href="creador-y-calculadora-de-recetas.html" class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground">
+          <iconify-icon icon="ph:flask" class="text-xl mb-1"></iconify-icon>
+          <span class="text-[10px] font-semibold">Recetas</span>
+        </a>
         <button class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground">
-          <iconify-icon icon="ph:squares-four" class="text-xl mb-1"></iconify-icon
-          ><span class="text-[10px] font-semibold">Inicio</span></button
-        ><button class="flex-1 flex flex-col items-center justify-center py-3 text-primary">
-          <iconify-icon icon="ph:box-arrow-down-fill" class="text-xl mb-1"></iconify-icon
-          ><span class="text-[10px] font-semibold">Insumos</span></button
-        ><button
-          class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground"
-        >
-          <iconify-icon icon="ph:flask" class="text-xl mb-1"></iconify-icon
-          ><span class="text-[10px] font-semibold">Recetas</span></button
-        ><button
-          class="flex-1 flex flex-col items-center justify-center py-3 text-muted-foreground"
-        >
-          <iconify-icon icon="ph:factory" class="text-xl mb-1"></iconify-icon
-          ><span class="text-[10px] font-semibold">Producción</span>
+          <iconify-icon icon="ph:factory" class="text-xl mb-1"></iconify-icon>
+          <span class="text-[10px] font-semibold">Producción</span>
         </button>
       </nav>
     </div>
+
+    <!-- Modal para crear/editar insumo -->
+    <div id="insumoModal" class="modal">
+      <div class="modal-content">
+        <h2 id="modalTitle" class="text-lg font-bold mb-4">Nuevo Insumo</h2>
+        <form id="insumoForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Nombre *</label>
+            <input id="nombre" type="text" required class="w-full bg-input border border-border rounded-sm py-2 px-3 focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Descripción</label>
+            <input id="descripcion" type="text" class="w-full bg-input border border-border rounded-sm py-2 px-3 focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Cantidad Actual</label>
+            <input id="cantidad_actual" type="number" step="0.01" value="0" class="w-full bg-input border border-border rounded-sm py-2 px-3 focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Unidad de Medida *</label>
+            <select id="unidad_medida" required class="w-full bg-input border border-border rounded-sm py-2 px-3 focus:outline-none focus:ring-1 focus:ring-primary">
+              <option value="">Seleccionar...</option>
+              <option value="kg">Kilogramos (kg)</option>
+              <option value="L">Litros (L)</option>
+              <option value="ml">Mililitros (ml)</option>
+              <option value="g">Gramos (g)</option>
+              <option value="piezas">Piezas</option>
+              <option value="und">Unidades</option>
+              <option value="m">Metros</option>
+              <option value="m2">Metros cuadrados</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Precio Unitario *</label>
+            <input id="precio_unitario" type="number" step="0.01" required class="w-full bg-input border border-border rounded-sm py-2 px-3 focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Cantidad Mínima</label>
+            <input id="cantidad_minima" type="number" step="0.01" value="0" class="w-full bg-input border border-border rounded-sm py-2 px-3 focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Proveedor</label>
+            <input id="proveedor" type="text" class="w-full bg-input border border-border rounded-sm py-2 px-3 focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Ubicación</label>
+            <input id="ubicacion" type="text" class="w-full bg-input border border-border rounded-sm py-2 px-3 focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div class="flex gap-2 pt-4">
+            <button type="submit" class="flex-1 bg-primary text-primary-foreground py-2 rounded-sm font-semibold">Guardar</button>
+            <button type="button" id="closeModal" class="flex-1 bg-secondary text-foreground py-2 rounded-sm font-semibold">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const API_BASE = '/api';
+
+      class InventoryAPI {
+        static async getInsumos() {
+          const response = await fetch(`${API_BASE}/insumos`);
+          if (!response.ok) throw new Error('Failed to fetch insumos');
+          return response.json();
+        }
+
+        static async createInsumo(data) {
+          const response = await fetch(`${API_BASE}/insumos`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          if (!response.ok) throw new Error('Failed to create insumo');
+          return response.json();
+        }
+
+        static async updateInsumo(id, data) {
+          const response = await fetch(`${API_BASE}/insumos/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          if (!response.ok) throw new Error('Failed to update insumo');
+          return response.json();
+        }
+
+        static async deleteInsumo(id) {
+          const response = await fetch(`${API_BASE}/insumos/${id}`, {
+            method: 'DELETE'
+          });
+          if (!response.ok) throw new Error('Failed to delete insumo');
+          return response.json();
+        }
+
+        static async getKardex(insumoId) {
+          const response = await fetch(`${API_BASE}/kardex?insumoId=${insumoId}`);
+          if (!response.ok) throw new Error('Failed to fetch kardex');
+          return response.json();
+        }
+
+        static async createKardexEntry(data) {
+          const response = await fetch(`${API_BASE}/kardex`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          if (!response.ok) throw new Error('Failed to create kardex entry');
+          return response.json();
+        }
+      }
+
+      let currentEditId = null;
+      let insumosList = [];
+
+      async function loadInsumos() {
+        try {
+          insumosList = await InventoryAPI.getInsumos();
+          renderInsumos(insumosList);
+        } catch (error) {
+          console.error('Error loading insumos:', error);
+          document.getElementById('insumosList').innerHTML = `<div class="text-center text-destructive py-8">Error al cargar insumos</div>`;
+        }
+      }
+
+      function renderInsumos(insumos) {
+        const container = document.getElementById('insumosList');
+        if (insumos.length === 0) {
+          container.innerHTML = '<div class="text-center text-muted-foreground py-8">No hay insumos. Crea uno nuevo.</div>';
+          return;
+        }
+
+        container.innerHTML = insumos.map(insumo => {
+          const isLow = insumo.cantidad_actual <= insumo.cantidad_minima;
+          const stockColor = isLow ? 'text-destructive' : insumo.cantidad_actual < insumo.cantidad_minima * 1.5 ? 'text-accent' : 'text-foreground';
+
+          return `
+            <div class="bg-card border border-border rounded-sm overflow-hidden">
+              <div class="p-3 border-b border-border flex justify-between items-start">
+                <div>
+                  <h3 class="font-bold text-sm uppercase">${insumo.nombre}</h3>
+                  <p class="text-[10px] text-muted-foreground font-mono">ID: IN-${String(insumo.id).padStart(3, '0')} ${insumo.descripcion ? '• ' + insumo.descripcion : ''}</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-lg font-mono font-bold ${stockColor}">
+                    ${insumo.cantidad_actual.toFixed(2)} <span class="text-xs">${insumo.unidad_medida}</span>
+                  </div>
+                  <div class="text-[10px] text-muted-foreground uppercase">Stock Actual</div>
+                </div>
+              </div>
+              <div class="bg-muted/10 p-2 flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex gap-1 flex-wrap">
+                  <button class="px-3 py-1 bg-secondary text-foreground text-xs font-bold border border-border rounded-sm flex items-center gap-1 salida-btn" data-id="${insumo.id}">
+                    <iconify-icon icon="ph:minus-bold"></iconify-icon> Salida
+                  </button>
+                  <button class="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-sm flex items-center gap-1 entrada-btn" data-id="${insumo.id}">
+                    <iconify-icon icon="ph:plus-bold"></iconify-icon> Entrada
+                  </button>
+                </div>
+                <div class="flex gap-1">
+                  <button class="px-3 py-1 bg-secondary text-foreground text-xs font-bold border border-border rounded-sm flex items-center gap-1 edit-btn" data-id="${insumo.id}">
+                    <iconify-icon icon="ph:pencil"></iconify-icon>
+                  </button>
+                  <button class="px-3 py-1 bg-destructive text-foreground text-xs font-bold rounded-sm flex items-center gap-1 delete-btn" data-id="${insumo.id}">
+                    <iconify-icon icon="ph:trash"></iconify-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Attach event listeners
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+          btn.addEventListener('click', handleDelete);
+        });
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+          btn.addEventListener('click', handleEdit);
+        });
+      }
+
+      async function handleDelete(e) {
+        const id = e.currentTarget.dataset.id;
+        if (confirm('¿Estás seguro de que deseas eliminar este insumo?')) {
+          try {
+            await InventoryAPI.deleteInsumo(id);
+            loadInsumos();
+          } catch (error) {
+            alert('Error al eliminar insumo: ' + error.message);
+          }
+        }
+      }
+
+      function handleEdit(e) {
+        const id = e.currentTarget.dataset.id;
+        const insumo = insumosList.find(i => i.id == id);
+        if (insumo) {
+          currentEditId = id;
+          document.getElementById('nombre').value = insumo.nombre;
+          document.getElementById('descripcion').value = insumo.descripcion || '';
+          document.getElementById('cantidad_actual').value = insumo.cantidad_actual;
+          document.getElementById('unidad_medida').value = insumo.unidad_medida;
+          document.getElementById('precio_unitario').value = insumo.precio_unitario;
+          document.getElementById('cantidad_minima').value = insumo.cantidad_minima;
+          document.getElementById('proveedor').value = insumo.proveedor || '';
+          document.getElementById('ubicacion').value = insumo.ubicacion || '';
+          document.getElementById('modalTitle').textContent = 'Editar Insumo';
+          document.getElementById('insumoModal').classList.add('show');
+        }
+      }
+
+      document.getElementById('newInsumoBtn').addEventListener('click', () => {
+        currentEditId = null;
+        document.getElementById('insumoForm').reset();
+        document.getElementById('modalTitle').textContent = 'Nuevo Insumo';
+        document.getElementById('insumoModal').classList.add('show');
+      });
+
+      document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('insumoModal').classList.remove('show');
+      });
+
+      document.getElementById('insumoModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('insumoModal')) {
+          document.getElementById('insumoModal').classList.remove('show');
+        }
+      });
+
+      document.getElementById('insumoForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = {
+          nombre: document.getElementById('nombre').value,
+          descripcion: document.getElementById('descripcion').value,
+          cantidad_actual: parseFloat(document.getElementById('cantidad_actual').value),
+          unidad_medida: document.getElementById('unidad_medida').value,
+          precio_unitario: parseFloat(document.getElementById('precio_unitario').value),
+          cantidad_minima: parseFloat(document.getElementById('cantidad_minima').value),
+          proveedor: document.getElementById('proveedor').value,
+          ubicacion: document.getElementById('ubicacion').value
+        };
+
+        try {
+          if (currentEditId) {
+            await InventoryAPI.updateInsumo(currentEditId, data);
+          } else {
+            await InventoryAPI.createInsumo(data);
+          }
+          document.getElementById('insumoModal').classList.remove('show');
+          loadInsumos();
+        } catch (error) {
+          alert('Error: ' + error.message);
+        }
+      });
+
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        const search = e.target.value.toLowerCase();
+        const filtered = insumosList.filter(i => i.nombre.toLowerCase().includes(search));
+        renderInsumos(filtered);
+      });
+
+      loadInsumos();
+    </script>
   </body>
 </html>
